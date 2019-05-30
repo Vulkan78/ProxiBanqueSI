@@ -25,11 +25,11 @@ public class ClientService {
         iClientDao.save(newclient);
     }
 
-    public void deleteForm(Integer id){
+    public void deleteClient(Integer id){
         iClientDao.deleteById(id);
     }
 
-    public Client updateForm(Integer id){
+    public Client updateClient(Integer id){
         return iClientDao.getOne(id);
     }
 

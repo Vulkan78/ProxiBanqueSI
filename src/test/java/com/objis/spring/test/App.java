@@ -34,18 +34,5 @@ public class App {
         Client result = springDao.save(client);
         System.out.println("Formation ajoutée en base : " + result.toString());
     }
-
-    /**
-     * Affichage des éléments en base
-     */
-    /*@Test
-    public void testListClient() {
-        springDao = (IClientDao) appContext.getBean("IClientDao");
-        List<Client> client = springDao.findByNomContaining(client.getNom());
-        for (Client e : client) {
-            System.out.println(e.getNom());
-        }
-        Assert.assertNotNull(client);
-    }*/
 }
 

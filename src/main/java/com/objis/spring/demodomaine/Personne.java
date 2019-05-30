@@ -3,8 +3,10 @@ package com.objis.spring.demodomaine;
 import javax.persistence.*;
 
 /**
- * Created by jimmy on 29/05/2019.
+ * @author Jimmy Rakotoson, José-Alexandre Giry
+ *
  */
+
 @MappedSuperclass
 public abstract class Personne {
 
@@ -16,14 +18,6 @@ public abstract class Personne {
     public String ville;
     public Integer telephone;
     public String mail;
-
-    /*public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }*/
 
     public String getNom() {
         return nom;

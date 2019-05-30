@@ -9,14 +9,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Form</title>
+    <title>Nouveau client</title>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h1>Formulaire</h1>
-            <a href="index.html"><h3>Accueil</h3></a>
+            <a href="index.html"><h1>ProxiBanqueSI</h1></a>
             <a href="search.html"><h3>Recherche</h3></a>
             <form method="post" class="form">
                 <div class="form-row">
