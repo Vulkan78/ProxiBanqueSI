@@ -6,7 +6,6 @@ import com.objis.spring.demodomaine.Client;
 import com.objis.spring.demodomaine.ConseillerClientele;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ConseillerService {
         return iConseillerDao.findAll();
     }
 
-    public void create(ConseillerClientele newconseiller){
+    public void createConseiller(ConseillerClientele newconseiller){
         iConseillerDao.save(newconseiller);
     }
 
@@ -37,11 +36,11 @@ public class ConseillerService {
         return iConseillerDao.getOne(id);
     }
 
-    public ConseillerClientele valideUpdate(ConseillerClientele conseillerClientele) {
+    public ConseillerClientele valideUpdateConseiller(ConseillerClientele conseillerClientele) {
         return this.iConseillerDao.save(conseillerClientele);
     }
 
-    public List<ConseillerClientele> find(String keyword) {
+    public List<ConseillerClientele> findConseiller(String keyword) {
         List<ConseillerClientele> results = new ArrayList<ConseillerClientele>();
         String[] keywords = keyword.split("[ -]");
         for(String word: keywords) {

@@ -12,10 +12,11 @@
     <div class="row">
         <div class="col-sm">
             <a href="index.html"><h1>ProxiBanqueSI</h1></a>
+            <a href="conseiller.html"><h3>Nouveau conseiller</h3></a>
             <a href="client.html"><h3>Nouveau client</h3></a>
             <a href="search.html"><h3>Recherche client</h3></a>
             <table class="table">
-                <thead class="thead-light">
+                <thead class="thead-dark">
                 <tr>
                     <td>ID</td>
                     <td>Prénom</td>
@@ -42,11 +43,11 @@
                     <td>0${conseiller.telephone}</td>
                     <td>${conseiller.mail}</td>
                     <td>${conseiller.login}</td>
-                    <td><a href="update.html?id=${conseiller.id}">
+                    <td><a href="updateConseiller.html?id=${conseiller.id}">
                         <img src="images/update.png" style="width:20px">
                     </a>
                     </td>
-                    <td><a href="delete.html?id=${conseiller.id}">
+                    <td><a href="deleteConseiller.html?id=${conseiller.id}">
                         <img src="images/delete.png" style="width:20px">
                     </a>
                     </td>

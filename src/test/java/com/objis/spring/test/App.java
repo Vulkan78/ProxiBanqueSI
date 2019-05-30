@@ -21,8 +21,8 @@ public class App {
      */
     @Before
     public void setUp() throws Exception {
-        client = new Client(1, "testnom","testprenom", true);
-        appContext = new ClassPathXmlApplicationContext("src/main/webapp/WEB-INF/application-servlet.xml");
+        client = new Client(1, "testnom","testprenom", "testadresse", 78000, "testville", 060000, "testmail"/*,true*/);
+        appContext = new ClassPathXmlApplicationContext("/src/main/webapp/WEB-INF/application-servlet.xml");
         springDao = (IClientDao) appContext.getBean("IClientDao");
     }
 
@@ -32,7 +32,7 @@ public class App {
     @Test
     public void saveClient() {
         Client result = springDao.save(client);
-        System.out.println("Formation ajoutée en base : " + result.toString());
+        System.out.println("Client ajoutée en base : " + result.toString());
     }
 }
 

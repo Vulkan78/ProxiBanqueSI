@@ -15,7 +15,7 @@
                 <a href="conseillers.html"><h3>Liste des conseillers</h3></a>
                 <a href="search.html"><h3>Recherche client</h3></a>
                 <a href="clients.html"><h3>Liste des clients</h3></a>
-                <a href="client.html"><h3>Recherche client</h3></a>
+                <a href="client.html"><h3>Nouveau client</h3></a>
             </div>
         </div>
     </div>

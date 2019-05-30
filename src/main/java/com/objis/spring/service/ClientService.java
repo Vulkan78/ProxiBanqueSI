@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by jimmy on 25/03/2019.
+ * @author Jimmy Rakotoson, José-Alexandre Giry
+ *
  */
+
 @Service
 public class ClientService {
 

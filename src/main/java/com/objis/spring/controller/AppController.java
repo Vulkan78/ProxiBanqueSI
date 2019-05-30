@@ -1,5 +1,6 @@
 package com.objis.spring.controller;
 import com.objis.spring.demodomaine.Client;
+import com.objis.spring.demodomaine.ConseillerClientele;
 import com.objis.spring.service.ClientService;
 import com.objis.spring.service.ConseillerService;
 import org.hibernate.Hibernate;
@@ -49,8 +50,15 @@ public class AppController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/client")
-    public String validateClient(Integer id, @RequestParam(name="nom") String nom, @RequestParam(name="prenom") String prenom){
-        final Client newClient = new Client(id,nom, prenom, true);
+    public String validateClient(Integer id, @RequestParam(name="nom") String nom,
+                                 @RequestParam(name="prenom") String prenom,
+                                 @RequestParam(name="adresse") String adresse,
+                                 @RequestParam(name="codePostal") Integer codePostal,
+                                 @RequestParam(name="ville") String ville,
+                                 @RequestParam(name="telephone") Integer telephone,
+                                 @RequestParam(name="mail") String mail/*,
+                                 @RequestParam(name="typePersonne") Boolean typePersonne*/){
+        final Client newClient = new Client(id,nom, prenom, adresse, codePostal, ville, telephone, mail/*,typePersonne*/);
         this.clientService.create(newClient);
         //return this.index();
         return "redirect:/clients.html";
@@ -60,7 +68,7 @@ public class AppController {
     public String delete(Integer id){
         this.clientService.deleteClient(id);
         //return this.index();
-        return "redirect:/index.html";
+        return "redirect:/clients.html";
     }
 
     @GetMapping("/update")
@@ -68,7 +76,7 @@ public class AppController {
         ModelAndView mav = new ModelAndView("client");
         Client client = this.clientService.updateClient(id);
         Hibernate.initialize(client);
-        mav.addObject("updateForm",client);
+        mav.addObject("updateClient",client);
         //return this.index();
         return mav;
     }
@@ -96,12 +104,58 @@ public class AppController {
 
     /* Conseiller clientèle */
 
+    @RequestMapping("/conseiller")
+    public ModelAndView showConseiller(){
+        ModelAndView MAV = new ModelAndView();
+        MAV.setViewName("conseiller");
+        return MAV;
+    }
+
     @RequestMapping({"/conseillers"})
     public ModelAndView conseillers (){
         ModelAndView MAV = new ModelAndView();
         MAV.setViewName("conseillers");
         MAV.addObject("conseillerList",this.conseillerService.getAll());
         return MAV;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/conseiller")
+    public String validateConseiller(Integer id, @RequestParam(name="nom") String nom,
+                                     @RequestParam(name="prenom") String prenom,
+                                     @RequestParam(name="adresse") String adresse,
+                                     @RequestParam(name="codePostal") Integer codePostal,
+                                     @RequestParam(name="ville") String ville,
+                                     @RequestParam(name="telephone") Integer telephone,
+                                     @RequestParam(name="mail") String mail,
+                                     @RequestParam(name="login") String login,
+                                     @RequestParam(name="login") String password){
+        final ConseillerClientele newConseiller = new ConseillerClientele (id,nom, prenom, adresse, codePostal, ville, telephone, mail,login, password);
+        this.conseillerService.createConseiller(newConseiller);
+        //return this.index();
+        return "redirect:/conseillers.html";
+    }
+
+    @GetMapping("/updateConseiller")
+    public ModelAndView updateConseiller(Integer id){
+        ModelAndView mav = new ModelAndView("conseiller");
+        ConseillerClientele conseiller = this.conseillerService.updateConseiller(id);
+        Hibernate.initialize(conseiller);
+        mav.addObject("updateConseiller",conseiller);
+        //return this.index();
+        return mav;
+    }
+
+    @PostMapping("/updateConseiller")
+    public String valideUpdate(ConseillerClientele conseiller){
+        this.conseillerService.valideUpdateConseiller(conseiller);
+        return "redirect:/conseillers.html";
+    }
+
+    @GetMapping("/deleteConseiller")
+    public String deleteConseiller(Integer id){
+        this.conseillerService.deleteConseiller(id);
+        //return this.index();
+        return "redirect:/conseillers.html";
     }
 
 }

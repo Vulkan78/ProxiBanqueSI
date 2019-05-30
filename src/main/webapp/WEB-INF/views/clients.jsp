@@ -25,7 +25,7 @@
                     <td>CP</td>
                     <td>Téléphone</td>
                     <td>Mail</td>
-                    <td>Entreprise</td>
+                    <%--<td>Entreprise</td>--%>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -42,7 +42,7 @@
                     <td>${client.codePostal}</td>
                     <td>0${client.telephone}</td>
                     <td>${client.mail}</td>
-                    <td>${client.typePersonne}</td>
+                    <%--<td>${client.typePersonne}</td>--%>
                     <td><a href="update.html?id=${client.id}">
                         <img src="images/update.png" style="width:20px">
                     </a>

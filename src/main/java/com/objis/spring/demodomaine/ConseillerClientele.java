@@ -20,64 +20,53 @@ public class ConseillerClientele extends Personne {
     public Integer id;
     public String login;
     public String password;
-    ArrayList<Client> listeClients;
+    public String listeClients;
+    /*ArrayList<Client> listeClients;*/
 
-    static int maxClients = 10;
-
-    /**
-     * Initialise un objet ConseillerClientele avec les parametres specifies au moment de l'instantiation
-     */
-    public ConseillerClientele() {
-        super();
-        this.listeClients = new ArrayList<Client>();
-    }
-
-    /**
-     * Initialise un objet ConseillerClientele avec les parametres specifies au moment de l'instantiation
-     */
-    public ConseillerClientele(String nom, String prenom) {
+    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, Integer telephone, String mail, String login, String password) {
         super();
         this.prenom = prenom;
         this.nom = nom;
-        this.listeClients = new ArrayList<Client>();
-    }
-
-    public ConseillerClientele(String nom, String prenom, String login, String password) {
-        super();
-        this.prenom = prenom;
-        this.nom = nom;
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.telephone = telephone;
+        this.mail = mail;
         this.login = login;
+        this.listeClients = "{1,2}";
         this.password = password;
-        this.listeClients = new ArrayList<Client>();
+        /*this.listeClients = new ArrayList<Client>();*/
     }
+
+    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, Integer telephone, String mail, String login, String password, String listeClients) {
+        super();
+        this.prenom = prenom;
+        this.nom = nom;
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.telephone = telephone;
+        this.mail = mail;
+        this.login = login;
+        this.listeClients = listeClients;
+        this.password = password;
+    }
+
+    public ConseillerClientele(){}
 
     // Get/Set
     /**
      * Methode pour recuperer la variable liste de client
      */
-    public ArrayList<Client> getListeClients() {
+    public String getListeClients() {
         return this.listeClients;
     }
 
     /**
      * Methode pour attribuer une valeur � la variable liste de client
      */
-    public void setListeClients(ArrayList<Client> listeClients) {
+    public void setListeClients(String listeClients) {
         this.listeClients = listeClients;
-    }
-
-    /**
-     * Methode pour recuperer la variable maxClients
-     */
-    public int getMaxClients() {
-        return maxClients;
-    }
-
-    /**
-     * Methode pour attribuer une valeur � la variable maxclients
-     */
-    public void setMaxClients(int maxClients) {
-        this.maxClients = maxClients;
     }
 
     /**
