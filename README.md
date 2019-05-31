@@ -50,7 +50,10 @@
 		- De créer un nouveau client
 		- De créer un nouveau conseiller
 		- De vous "déconnecter"
-
+		
+ L'application permet de créer, modifier, afficher et supprimer des clients et des conseillers.
+- En cours (lors de la V5 mais prévu V6) : Authentification, gestion des exceptions et test JUnit
+- A faire ensuite (prévu V7) :  Creation des classes ComptesBancaires et Virement et gestion du virement par un webservice.
 
 ## Consulter la documentation JavaDoc:
 - Double-cliquer sur le fichier *index.html* se trouvant dans le repertoire *Javadoc*
