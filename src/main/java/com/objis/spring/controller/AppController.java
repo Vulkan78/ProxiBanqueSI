@@ -27,7 +27,14 @@ public class AppController {
     @Autowired
     private ConseillerService conseillerService;
 
-    @RequestMapping({"/", "/index"})
+    @RequestMapping({"/", "/login"})
+    public ModelAndView login (){
+        ModelAndView MAV = new ModelAndView();
+        MAV.setViewName("login");
+        return MAV;
+    }
+
+    @RequestMapping({"/index"})
     public ModelAndView index (){
         ModelAndView MAV = new ModelAndView();
         MAV.setViewName("index");
@@ -46,6 +53,13 @@ public class AppController {
     public ModelAndView showClient(){
         ModelAndView MAV = new ModelAndView();
         MAV.setViewName("client");
+        return MAV;
+    }
+
+    @RequestMapping("/profil_client")
+    public ModelAndView updateClient(){
+        ModelAndView MAV = new ModelAndView();
+        MAV.setViewName("profil_client");
         return MAV;
     }
 
@@ -73,7 +87,7 @@ public class AppController {
 
     @GetMapping("/update")
     public ModelAndView update(Integer id){
-        ModelAndView mav = new ModelAndView("client");
+        ModelAndView mav = new ModelAndView("profil_client");
         Client client = this.clientService.updateClient(id);
         Hibernate.initialize(client);
         mav.addObject("updateClient",client);

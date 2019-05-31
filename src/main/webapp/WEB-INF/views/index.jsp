@@ -1,23 +1,64 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
 
+<!------ Head ---------->
 <head>
     <title>ProxiBanqueSI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
+<!------ Body ---------->
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <a href="index.html"><h1>ProxiBanqueSI</h1></a>
-                <a href="conseillers.html"><h3>Liste des conseillers</h3></a>
-                <a href="search.html"><h3>Recherche client</h3></a>
-                <a href="clients.html"><h3>Liste des clients</h3></a>
-                <a href="client.html"><h3>Nouveau client</h3></a>
-            </div>
+
+<!------ Bar de menu ---------->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!------ Logo ---------->
+            <img src="https://www.proxi-bnk.com/content/PA_esf-ca-app-content/content/pws/rbwm/static/images/layout/logo-fb.gif" alt="Responsive image" style="width:60%">
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></a></li>
+
+            <li> <a href="client.html">Nouveau client<span class="caret"></a></li>
+            <li><a href="conseiller.html">Nouveau conseiller</a></li>
+        </ul>
+        <!------ Déconnexion ---------->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html"><span class="glyphicon glyphicon-off"></span> Se déconnecter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!------ Page ---------->
+<div class="container-fluid">
+    <h1 style="text-align:center">Que voulez-vous faire ?</h1>
+
+    <!------ Choix ---------->
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="clients.html"><button type="button" class="btn btn-primary btn-lg btn-block">Consulter la liste des clients</button></a>
+            <a href="clients.html"><button type="button" class="btn btn-primary btn-lg btn-block">Consulter les rapports</button></a>
+        </div>
+        <div class="col-sm-6" >
+            <a href="virement.html#virementcontenu"><button type="button" class="btn btn-primary btn-lg btn-block">Effectuer un virement</button></a>
+            <a href="conseillers.html"><button type="button" class="btn btn-primary btn-lg btn-block">Liste des conseillers</button></a>
         </div>
     </div>
-</body>
-</html>
+</div>
+
+
+
+
+
+
+
+
+
