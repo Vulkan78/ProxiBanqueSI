@@ -20,8 +20,9 @@
 	- Téléchargez le depuis: *http://www.oracle.com/technetwork/java/javase/downloads/index.html*
 
 ### ETAPE 1
-## Importer la base de données
+## Gestion de la base de données
 	- Sur PhpMyAdmin, importez le fichier BDDProxiBanqueSI.sql
+	- Dans le fichier ProxiBanqueSI/src/main/resources/db.properties, modifiez les valeurs en accordance avec votre BDD.
 
 ### Etape 2
 ## Générer le .war
