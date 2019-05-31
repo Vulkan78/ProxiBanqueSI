@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></a></li>
 
-            <li> <a href="client.html">Nouveau client<span class="caret"></a></li>
+            <li> <a href="client.html">Nouveau client</a></li>
             <li><a href="conseiller.html">Nouveau conseiller</a></li>
         </ul>
         <!------ Déconnexion ---------->
@@ -89,7 +89,7 @@
         <td>${conseiller.adresse}</td>
         <td>${conseiller.codePostal}</td>
         <td>${conseiller.ville}</td>
-        <td>0${conseiller.telephone}</td>
+        <td>${conseiller.telephone}</td>
         <td>${conseiller.mail}</td>
         <td>${conseiller.login}</td>
 

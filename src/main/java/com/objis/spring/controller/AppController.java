@@ -27,6 +27,9 @@ public class AppController {
     @Autowired
     private ConseillerService conseillerService;
 
+    /**
+     * Affiche la page d'authentification
+     */
     @RequestMapping({"/", "/login"})
     public ModelAndView login (){
         ModelAndView MAV = new ModelAndView();
@@ -34,6 +37,9 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     * Affiche la page d'accueil
+     */
     @RequestMapping({"/index"})
     public ModelAndView index (){
         ModelAndView MAV = new ModelAndView();
@@ -41,6 +47,9 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     *  Affiche la liste des clients
+     */
     @RequestMapping({"/clients"})
     public ModelAndView clients (){
         ModelAndView MAV = new ModelAndView();
@@ -49,6 +58,9 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     * Affiche la page de creation d'un client
+     */
     @RequestMapping("/client")
     public ModelAndView showClient(){
         ModelAndView MAV = new ModelAndView();
@@ -56,6 +68,9 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     *  Affiche le profil du client
+     */
     @RequestMapping("/profil_client")
     public ModelAndView updateClient(){
         ModelAndView MAV = new ModelAndView();
@@ -63,13 +78,16 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     * Valide la création du client et l'injecte dans la base
+     */
     @RequestMapping(method = RequestMethod.POST, path = "/client")
     public String validateClient(Integer id, @RequestParam(name="nom") String nom,
                                  @RequestParam(name="prenom") String prenom,
                                  @RequestParam(name="adresse") String adresse,
                                  @RequestParam(name="codePostal") Integer codePostal,
                                  @RequestParam(name="ville") String ville,
-                                 @RequestParam(name="telephone") Integer telephone,
+                                 @RequestParam(name="telephone") String telephone,
                                  @RequestParam(name="mail") String mail/*,
                                  @RequestParam(name="typePersonne") Boolean typePersonne*/){
         final Client newClient = new Client(id,nom, prenom, adresse, codePostal, ville, telephone, mail/*,typePersonne*/);
@@ -78,6 +96,9 @@ public class AppController {
         return "redirect:/clients.html";
     }
 
+    /**
+     * Supprime le client de la base
+     */
     @GetMapping("/delete")
     public String delete(Integer id){
         this.clientService.deleteClient(id);
@@ -85,6 +106,9 @@ public class AppController {
         return "redirect:/clients.html";
     }
 
+    /**
+     * Récupère les informations du client et les affiche dans le profil afin de pouvoir les modifier
+     */
     @GetMapping("/update")
     public ModelAndView update(Integer id){
         ModelAndView mav = new ModelAndView("profil_client");
@@ -95,11 +119,15 @@ public class AppController {
         return mav;
     }
 
+    /**
+     * Valide les modifications du profil du client
+     */
     @PostMapping("/update")
     public String valideUpdate(Client client){
         this.clientService.valideUpdate(client);
         return "redirect:/clients.html";
     }
+
 
     @RequestMapping({"/search"})
     public ModelAndView search (){
@@ -108,15 +136,15 @@ public class AppController {
         return MAV;
     }
 
-    @PostMapping("/search")
+   /* @PostMapping("/search")
     ModelAndView validateSearch(@RequestParam String keyword) {
         final ModelAndView mav = new ModelAndView("search");
         mav.addObject("formationList",
                 this.clientService.find(keyword));
         return mav;
-    }
+    }*/
 
-    /* Conseiller clientèle */
+    /** Conseiller clientèle */
 
     @RequestMapping("/conseiller")
     public ModelAndView showConseiller(){
@@ -125,6 +153,9 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     *  Affiche la liste des conseillers
+     */
     @RequestMapping({"/conseillers"})
     public ModelAndView conseillers (){
         ModelAndView MAV = new ModelAndView();
@@ -133,13 +164,16 @@ public class AppController {
         return MAV;
     }
 
+    /**
+     * Valide la création du conseiller et l'injecte dans la base
+     */
     @RequestMapping(method = RequestMethod.POST, path = "/conseiller")
     public String validateConseiller(Integer id, @RequestParam(name="nom") String nom,
                                      @RequestParam(name="prenom") String prenom,
                                      @RequestParam(name="adresse") String adresse,
                                      @RequestParam(name="codePostal") Integer codePostal,
                                      @RequestParam(name="ville") String ville,
-                                     @RequestParam(name="telephone") Integer telephone,
+                                     @RequestParam(name="telephone") String telephone,
                                      @RequestParam(name="mail") String mail,
                                      @RequestParam(name="login") String login,
                                      @RequestParam(name="login") String password){
@@ -149,6 +183,9 @@ public class AppController {
         return "redirect:/conseillers.html";
     }
 
+    /**
+     * Récupère les informations du client et les affiche dans le profil afin de pouvoir les modifier
+     */
     @GetMapping("/updateConseiller")
     public ModelAndView updateConseiller(Integer id){
         ModelAndView mav = new ModelAndView("conseiller");
@@ -159,12 +196,18 @@ public class AppController {
         return mav;
     }
 
+    /**
+     * Valide les modifications du profil du conseiller
+     */
     @PostMapping("/updateConseiller")
     public String valideUpdate(ConseillerClientele conseiller){
         this.conseillerService.valideUpdateConseiller(conseiller);
         return "redirect:/conseillers.html";
     }
 
+    /**
+     * Supprime le conseiller de la base
+     */
     @GetMapping("/deleteConseiller")
     public String deleteConseiller(Integer id){
         this.conseillerService.deleteConseiller(id);

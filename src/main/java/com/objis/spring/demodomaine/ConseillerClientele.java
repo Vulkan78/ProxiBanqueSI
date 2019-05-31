@@ -7,6 +7,9 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 
 /**
+ * Classe ConseillerClientele qui hérite de la classe Personne
+ * Le conseiller clientele peut visualiser ses clients, éditer leurs informations ou les supprimer
+ * Le conseiller est géré par le gérant via la classe ConseillerService
  * @author Jimmy Rakotoson, José-Alexandre Giry
  *
  */
@@ -23,7 +26,7 @@ public class ConseillerClientele extends Personne {
     public String listeClients;
     /*ArrayList<Client> listeClients;*/
 
-    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, Integer telephone, String mail, String login, String password) {
+    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, String telephone, String mail, String login, String password) {
         super();
         this.prenom = prenom;
         this.nom = nom;
@@ -38,7 +41,7 @@ public class ConseillerClientele extends Personne {
         /*this.listeClients = new ArrayList<Client>();*/
     }
 
-    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, Integer telephone, String mail, String login, String password, String listeClients) {
+    public ConseillerClientele(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, String telephone, String mail, String login, String password, String listeClients) {
         super();
         this.prenom = prenom;
         this.nom = nom;
@@ -53,38 +56,6 @@ public class ConseillerClientele extends Personne {
     }
 
     public ConseillerClientele(){}
-
-    // Get/Set
-    /**
-     * Methode pour recuperer la variable liste de client
-     */
-    public String getListeClients() {
-        return this.listeClients;
-    }
-
-    /**
-     * Methode pour attribuer une valeur � la variable liste de client
-     */
-    public void setListeClients(String listeClients) {
-        this.listeClients = listeClients;
-    }
-
-    /**
-     * Methode toString: donne le nombre et la liste des clients si il y a lieu
-     */
-    /*public String toString() {
-
-        String message = "Conseiller clientele: [" + this.nom + " " + this.prenom + "]";
-        if (!listeClients.isEmpty()) {
-            message = message + "\nVous avez " + listeClients.size() + " client(s):";
-            for (Client currentClient : listeClients) {
-                message = message + "\n" + currentClient.toString();
-            }
-        } else {
-            message = message + "\nVous n'avez aucun client.";
-        }
-        return message;
-    }*/
 
     public Integer getId() {
         return id;

@@ -26,7 +26,7 @@
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></a></li>
 
-            <li> <a href="client.html">Nouveau client<span class="caret"></a></li>
+            <li> <a href="client.html">Nouveau client</a></li>
             <li><a href="conseiller.html">Nouveau conseiller</a></li>
         </ul>
         <!------ Déconnexion ---------->
@@ -77,7 +77,7 @@
 
             <div class="form-group col-md-6">
                 <label for="telephone">Téléphone</label>
-                <input type="number" class="form-control" name="telephone" id="telephone" value="${empty updateClient ? '' : updateClient.telephone}">
+                <input type="text" class="form-control" name="telephone" id="telephone" value="${empty updateClient ? '' : updateClient.telephone}">
             </div>
 
             <div class="form-group col-md-6">

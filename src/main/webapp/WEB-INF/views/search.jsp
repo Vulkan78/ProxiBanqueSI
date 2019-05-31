@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jimmy
-  Date: 26/03/2019
-  Time: 15:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -17,7 +10,7 @@
     <div class="row">
         <div class="col-sm">
         <h1>Recherche</h1><a href="index.html"><h3>Accueil</h3></a>
-        <a href="form.html"><h3>Nouveau</h3></a>
+        <a href="client.html"><h3>Nouveau</h3></a>
         <form method="post" class="form">
             <div class="form-row">
                 <div class="col">
@@ -29,7 +22,7 @@
             </div>
         </form>
         <ul class="list-group">
-            <c:forEach items="${clientList}" var="form">
+            <c:forEach items="${clientList}" var="client">
                 <li class="list-group-item">
                     <p>ID : ${client.id}/ nom : ${client.nom}/ prenom : ${client.prenom}
                         <a href="delete.html?id=${client.id}">

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * @author Jimmy Rakotoson, José-Alexandre Giry
- *
+ * Classe mère des classes Client et ConseillerClientele
  */
 
 @MappedSuperclass
@@ -16,7 +16,7 @@ public abstract class Personne {
     public String adresse;
     public Integer codePostal;
     public String ville;
-    public Integer telephone;
+    public String telephone;
     public String mail;
 
     public String getNom() {
@@ -59,11 +59,11 @@ public abstract class Personne {
         this.ville = ville;
     }
 
-    public Integer getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -73,5 +73,10 @@ public abstract class Personne {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    @Override
+    public String toString() {
+        return this.prenom + " " + this.nom ;
     }
 }

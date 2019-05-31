@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></a></li>
 
-            <li> <a href="client.html">Nouveau client<span class="caret"></a></li>
+            <li> <a href="client.html">Nouveau client</a></li>
             <li><a href="conseiller.html">Nouveau conseiller</a></li>
         </ul>
         <!------ Déconnexion ---------->
@@ -45,10 +45,8 @@
     <div class="row">
         <div class="col-sm-6">
             <a href="clients.html"><button type="button" class="btn btn-primary btn-lg btn-block">Consulter la liste des clients</button></a>
-            <a href="clients.html"><button type="button" class="btn btn-primary btn-lg btn-block">Consulter les rapports</button></a>
         </div>
         <div class="col-sm-6" >
-            <a href="virement.html#virementcontenu"><button type="button" class="btn btn-primary btn-lg btn-block">Effectuer un virement</button></a>
             <a href="conseillers.html"><button type="button" class="btn btn-primary btn-lg btn-block">Liste des conseillers</button></a>
         </div>
     </div>

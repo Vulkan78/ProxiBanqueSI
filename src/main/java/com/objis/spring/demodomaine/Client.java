@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
+ * Classe Client qui hérite de la classe Personne
+ * Le client est géré par le conseiller clientele via la classe ClientService
+ *
  * @author Jimmy Rakotoson, José-Alexandre Giry
  *
  */
@@ -19,7 +22,7 @@ public class Client extends Personne {
     /*public Boolean typePersonne;*/
     /*private Boolean fortune;*/
 
-    public Client(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, Integer telephone, String mail/*, Boolean typePersonne*/) {
+    public Client(Integer id, String nom, String prenom, String adresse, Integer codePostal, String ville, String telephone, String mail/*, Boolean typePersonne*/) {
         super();
         this.id = id;
         this.nom = nom;

@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></a></li>
 
-            <li> <a href="client.html">Nouveau client<span class="caret"></a></li>
+            <li> <a href="client.html">Nouveau client</a></li>
             <li><a href="conseiller.html">Nouveau conseiller</a></li>
         </ul>
         <!------ Déconnexion ---------->
@@ -88,12 +88,12 @@
         <td>${client.adresse}</td>
         <td>${client.codePostal}</td>
         <td>${client.ville}</td>
-        <td>0${client.telephone}</td>
+        <td>${client.telephone}</td>
         <td>${client.mail}</td>
 
         <td><a class="glyphicon glyphicon-pencil" href="update.html?id=${client.id}"></td>
         <td><a class="glyphicon glyphicon-align-justify" href="comptes.html"></td>
-        <td><a class="glyphicon glyphicon-sort" href="virement.html"> </td>
+        <td><a class="glyphicon glyphicon-sort" href="virement.html"></td>
         <td><a class="glyphicon glyphicon-trash" href="delete.html?id=${client.id}"></td>
 
     </tr>
